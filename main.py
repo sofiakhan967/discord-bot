@@ -3,7 +3,7 @@ from discord import message
 import random
 from discord.ext import commands
 
-token=('ODQxNDE4ODM1NzA1NzI0OTQ4.YJmeWw.ymMketqJuLSGWrwuOdJ4Bo3XYbE')
+token=('ENTER YOUR TOKEN HERE')
 
 words=['hi','hello','whatsup','good to see you']
 reply=['hi', 'hello' , 'good to see you too', 'hey buddy', 'much better','its been a long day ']
@@ -19,6 +19,7 @@ async def on_ready():
 async def hello(ctx):
     await ctx.send('hi')
 
+    #WELCOMING NEW MEMBERS ON SERVER 
 @client.event
 async def on_member_join(member):
     guild=client.get_guild(841419937256046613) #server id
@@ -26,6 +27,7 @@ async def on_member_join(member):
     await channel.send(f'{member.mention} welcome to server ! :partying_face:') #welcome member on server
     await member.send(f'welcome to {guild.name} server , {member.mention} , :partying_face:') #welcome msg DM
 
+    
 @client.event
 async def on_message(message):
     if message.author == client.user:
